@@ -2,16 +2,15 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "noUnusedLocals": true,
     "baseUrl": ".",
     "paths": {
-      "db/*": ["src/db/*"],
-      "theme/*": ["src/theme/*"],
-      "components/*": ["src/components/*"],
-      "constants/*": ["src/constants/*"],
-      "i18n/*": ["src/i18n/*"],
-      "hooks/*": ["src/hooks/*"],
-      "navigation/*": ["src/navigation/*"],
-      "screens/*": ["src/screens/*"]
+      "@/*": ["./src/*"]
     }
   }
 }
