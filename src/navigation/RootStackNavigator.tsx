@@ -12,11 +12,22 @@ import { AddTaskScreen, HomeScreen } from "@/screens";
 
 const { Navigator, Screen, Group } = createStackNavigator<RootStackParamList>();
 function Root() {
+  const { surface } = useTheme().colors;
   return (
     <Navigator>
       <Group screenOptions={{ headerShown: false }}>
         <Screen name={"Root"} component={BottomTabNavigator} />
-        <Screen name={"AddTask"} component={AddTaskScreen} />
+        <Screen
+          name={"AddTask"}
+          component={AddTaskScreen}
+          options={{
+            headerShown: true,
+            headerTitle: "Create New Task",
+            presentation: "modal",
+            headerStyle: { backgroundColor: surface },
+            headerShadowVisible: false
+          }}
+        />
       </Group>
     </Navigator>
   );
