@@ -8,7 +8,7 @@ import { setBackgroundColorAsync } from "expo-navigation-bar";
 import type { RootStackParamList, RootTabParamList } from "./types";
 
 import { TabBarIcons } from "@/components";
-import { HomeScreen } from "@/screens";
+import { AddTaskScreen, HomeScreen } from "@/screens";
 
 const { Navigator, Screen, Group } = createStackNavigator<RootStackParamList>();
 function Root() {
@@ -16,6 +16,7 @@ function Root() {
     <Navigator>
       <Group screenOptions={{ headerShown: false }}>
         <Screen name={"Root"} component={BottomTabNavigator} />
+        <Screen name={"AddTask"} component={AddTaskScreen} />
       </Group>
     </Navigator>
   );

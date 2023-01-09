@@ -1,9 +1,13 @@
 import type { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import type {
+  CompositeNavigationProp,
   CompositeScreenProps,
   NavigatorScreenParams
 } from "@react-navigation/native";
-import type { StackScreenProps } from "@react-navigation/stack";
+import type {
+  StackNavigationProp,
+  StackScreenProps
+} from "@react-navigation/stack";
 
 export type RootTabParamList = {
   Home: undefined;
@@ -14,7 +18,7 @@ export type RootTabParamList = {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
-  //   AddTask: { defaultList?: string; date?: number } | undefined;
+  AddTask: { defaultList?: string; date?: number } | undefined;
   //   Overview: undefined;
 };
 
@@ -36,10 +40,11 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
 //   route: StackScreenProps<ListStackType, Screen>["route"];
 // };
 
-// export type useNavigationProps = CompositeNavigationProp<
-//   StackNavigationProp<RootStackParamList>,
-//   CompositeNavigationProp<
-//     StackNavigationProp<RootTabParamList>
-//     // StackNavigationProp<ListStackType>
-//   >
-// >;
+export type useNavigationProps = CompositeNavigationProp<
+  StackNavigationProp<RootStackParamList>,
+  StackNavigationProp<RootTabParamList>
+  // CompositeNavigationProp<
+  //   StackNavigationProp<RootTabParamList>
+  //   StackNavigationProp<ListStackType>
+  // >
+>;
